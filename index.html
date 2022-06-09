@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+
+
+
+
+
+
+        let book1 = 'math'
+        let book2 = 'sci'
+        let book3 = 'bio'
+        let book4 = 'eng'
+        // ==================================================  Array
+
+
+        let person=[24,34,33,556]
+        let x=person[1]
+
+        let [one,two,three,four] = person  /// ES6 ARRAY DISTURTURING  ///
+          console.log(one )
+
+        person[1]=2
+        person.unshift(2)
+        person.push(1)
+        person.pop()
+        person.shift()
+
+        console.log(person)
+
+
+        // =============================================  property object
+   
+        let person = {
+            fristName: 'aman',
+            midldleName: 'kumar',
+            lastName: 'mandal',
+        }
+
+
+        let name = person.fristName    ///ES6
+        // console.log (name)    /////    ES6
+        let {fristName : name,midldleName: address,lastName} = person
+        console.log(name)        ///// ES6
+
+
+        person.age = 23
+        delete person.lastName
+        console.log(person['fristName'])
+
+        for (let x in person) {
+            console.log(x +" : "+person[x])
+        }
+
+        // ===========================================  method Object
+
+        let person ={
+            fristName : 'aman',
+            lastName : 'mandal',
+
+            sayHello : function(){
+                console.log('Hey!!!')
+            },
+            where(){
+                console.log('im here')    //// ES6  ////
+            }
+        }
+        person.sayHello()
+
+        person.where()
+
+        //===========================================  this keyword
+
+        let person = {
+            fristName :'aman',
+            lastName :'mandal',
+            sayHello(){
+                console.log('hey  ' + this.fristName  + " "+car.brand )
+            }
+        }
+        let car={
+            brand : 'wwww',
+            model : 'style',
+        }
+
+        person.sayHello()
+
+
+        // ==========================================  random
+
+
+        function rdom(min,max){
+        let x = Math.floor(Math.random()*(max - min))+ min
+        return x
+        }
+
+        console.log(rdom(-10,10));
+
+
+        // ==================================================   date
+
+        let x = new Date();
+        console.log(x)
+
+        // ================================================= default parameter
+ 
+        function talk(msg='enter argument'){
+            console.log(msg)
+        }
+        talk('helooo')
+
+
+
+        //=================================================== rest parameter
+
+        function sum(...add){
+        let result =0;
+
+        for(let i=0; i<add.length; i++)
+        {
+            result = add[i]+result
+        }
+        return result
+        }
+        console.log(sum(1+2+3+4))
+
+        //=========================================================spread opration
+
+        let arr = [1,2,3,4,5]
+        let arr1= [6,7,8,9]
+        let arr2 = [...arr,...arr1]
+        console.log(arr2)
+
+        //==================================================== Class
+
+        class Person{
+            constructor(fristName,lastName){
+                this.frist= fristName
+                this.last = lastName
+            }
+            walk(){
+                console.log(`${this.frist} ${this.last} walk vert fast`)
+            }
+            static eat(){
+                console.log(`eating over loaded`)
+            }
+        }
+
+        let person1 = new Person('aman','mandal')
+        person1.walk() 
+        Person.eat()
+
+
+        // ================================================== Promise
+
+
+        let x = new Promise(function(resolve,reject){
+        console.log('pls... wait data fetching')
+        let a= 1+1 
+        setTimeout(()=>{
+            if(a==1){
+        resolve('sucess')
+        }else{
+        reject('Try again')
+        }
+        },2000)
+        })
+        x.then((result)=>{
+            console.log(result)
+        }).catch((error)=>{
+            console.log(error)
+        })
+
+
+        function value(a) {
+            return new Promise(function (resolve, reject) {
+                console.log('pls... wait data fetching')
+                setTimeout(() => {
+                    if (value == 2) {
+                        resolve('sucess')
+                    } else {
+                        reject('Try again')
+                    }
+                }, 2000)
+            });
+        }
+        value(2).then((result) => {
+            console.log(result)
+        }).catch((error) => {
+            console.log(error)
+        })
+
+
+//================================================= Async Await
+
+
+async function test(){
+    console.log('a')
+   await console.log('b')
+    console.log('c')
+}
+console.log('1')
+test()
+console.log('2')
+
+//===========================================    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
