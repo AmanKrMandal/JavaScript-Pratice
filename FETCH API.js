@@ -1,10 +1,18 @@
 //get ---------------------------
-
-    const fetchData = async () => {
-        const response = await fetch('http://localhost:5000/list');
+    
+   const test = async () => {
+    try {
+        const response = await fetch("sample.json")
         const result = await response.json();
-        setExpenses(result);
+        setExpenses(result); |OR| return(result);
+    } catch (error) {
+        console.log(error)
     }
+}
+  test().then((result) => {
+    console.log(result)
+  });
+
 
     
 //post--------------------
