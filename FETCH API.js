@@ -30,4 +30,62 @@
         fetchData();
     }
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import './App.css';
+import axios from 'axios';
+import { useEffect } from 'react';
+
+function App() {
+
+  // const[data,setData] = useState([])
+
+  // useEffect(() => {
+  //   axios.get("https://60ef36aaf587af00179d3969.mockapi.io/fitbots/interview/articles")
+  //     .then((res) => {
+  //       console.log("res", res.data)
+  //     })
+  //     .catch((error) => {
+  //     console.log("error",error)
+  //   })
+  // }, []);
+
+
+
+
+
+
+  const getAPIData = async () => {
+    try {
+      const res = await axios.get("https://60ef36aaf587af00179d3969.mockapi.io/fitbots/interview/articles")
+      console.log("res", res);
+    } catch (error) {
+      console.log("erroe", error.message)
+    }
+  }
+  useEffect(() => {
+    getAPIData()
+  })
+
+  return (
+    <div className="App">
+      hello
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
 
